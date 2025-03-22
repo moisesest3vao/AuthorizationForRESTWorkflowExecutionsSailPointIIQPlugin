@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+
+<sailpoint>
+
+	
+	<Workflow explicitTransitions="true" name="REST API Test Authorization" type="">
+	  <Variable input="true" name="workgroupName" required="true"/>
+	  <Variable name="membersNames" output="true"/>
+	  <Step icon="Default" name="Get workgroup member names" posX="146" posY="26" resultVariable="membersNames">
+	    <Arg name="workgroupName" value="ref:workgroupName"/>
+	    <Script>
+	      <Source>import sailpoint.object.QueryOptions;
+	        import sailpoint.object.Filter;
+	        import sailpoint.object.Identity;
+	        import java.util.ArrayList;
+	        import java.util.List;
+	        
+	        List result = new ArrayList();
+					
+	        QueryOptions qo = new QueryOptions();
+	        qo.add(Filter.contains("workgroups.name",workgroupName));
+	        Iterator itMembers = context.search(Identity.class, qo, "name");
+	
+	        workgroupMembers = new ArrayList();
+	        
+	        while(itMembers.hasNext()){
+	          Object[] member = itMembers.next();
+	          String memberName = (String) member[0];
+	          workgroupMembers.add(memberName);
+	        }
+	        Util.flushIterator(itMembers);
+	      	
+	        return workgroupMembers;
+	      </Source>
+	    </Script>
+	    <Transition to="Stop"/>
+	  </Step>
+	  <Step icon="Start" name="Start" posX="25" posY="20">
+	    <Transition to="Get workgroup member names"/>
+	  </Step>
+	  <Step icon="Stop" name="Stop" posX="280" posY="31"/>
+	</Workflow>
+	
+
+</sailpoint>
+
+
+

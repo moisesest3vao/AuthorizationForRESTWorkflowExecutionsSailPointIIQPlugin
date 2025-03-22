@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+
+<sailpoint>
+
+	<Custom name="RESTWorkflowExecutionAuthorizationConfig">
+	  <Attributes>
+	    <Map>
+	      <entry key="enabled" value="true"/>
+	      <entry key="denyRequestsByDefault" value="true"/>
+	      <entry key="authorizationConfig">
+	      	<value>
+	      	  <Map>
+	      	  
+	      	   <!--  Config for Workflow `REST API Test Authorization` -->
+	      		<entry key="REST API Test Authorization">
+	      			<value>
+	      				<Map>
+	      					<entry key="type" value="sailpoint.object.SPRight"/>
+	      					<entry key="name" value="RESTAuthorization-REST API Test Authorization"/>
+	      				</Map>
+	      			</value>
+	      		</entry>
+	      		
+	      		<!--  Config for Workflow `Example2Workflow` -->
+	      		<entry key="Example2Workflow">
+	      			<value>
+	      				<Map>
+	      					<entry key="type" value="sailpoint.object.Capability"/>
+	      					<entry key="name" value="capabilityName"/>
+	      				</Map>
+	      			</value>
+	      		</entry>
+	      		
+	      	  </Map>
+	      	</value>
+	      </entry>
+	    </Map>
+	  </Attributes>
+	</Custom>
+
+	
+
+</sailpoint>
+
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Plugin PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Plugin displayName="RESTWorkflowExecutionAuthorization" minSystemVersion="7.1" name="restworkflowexecutionauthorization" rightRequired="" version="0.1">
+  <Attributes>
+    <Map>
+      <entry key="minUpgradableVersion" value="0.1"/>
+      <entry key="restResources">
+        <value>
+          <List>
+            <String>sailpoint.plugin.restworkflowexecutionauthorization.rest.AuthorizedLaunchedWorkflowsResource</String>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Plugin>
