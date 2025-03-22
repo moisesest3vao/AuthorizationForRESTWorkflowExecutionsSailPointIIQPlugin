@@ -1,0 +1,2 @@
+# AuthorizationForRESTWorkflowExecutionsSailPointIIQPlugin
+Custom Plugin which implements SPRight/Capability authorization for REST Workflow executions within SailPoint IdentityIQ 
