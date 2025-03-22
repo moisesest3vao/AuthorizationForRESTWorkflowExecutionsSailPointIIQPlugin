@@ -1,4 +1,4 @@
-##**Implementing Granular Authorization for REST Workflow Executions in IdentityIQ**
+## **Implementing Granular Authorization for REST Workflow Executions in IdentityIQ**
 
 ### Introduction
 SailPoint IdentityIQ provides a [REST API for executing workflows](https://developer.sailpoint.com/docs/api/iiq/launch-workflow), but by default, it does not enforce fine-grained authorization controls on who can trigger specific workflows. The only authorization object that controls this endpoint is the SPRight with name **LaunchWorkflowWebService**, which gives permission to execute all workflows within IdentityIQ. Therefore, this can lead to security risks if sensitive workflows are executed by unauthorized users.
