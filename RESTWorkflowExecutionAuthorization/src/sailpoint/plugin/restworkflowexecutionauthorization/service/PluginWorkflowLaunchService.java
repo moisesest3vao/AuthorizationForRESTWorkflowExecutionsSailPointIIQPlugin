@@ -53,10 +53,10 @@ public class PluginWorkflowLaunchService {
 		Map<String, String> wfAuthConfig = (Map<String, String>) authConfig.get(wf);
 		
 		if(null == wfAuthConfig) {
-			if ("true".equalsIgnoreCase((String) config.get("denyRequestsByDefault"))) {
-				throw new UnauthorizedAccessException("Unauthorized");
-			} else {
+			if ("false".equalsIgnoreCase((String) config.get("denyRequestsByDefault"))) {
 				return true;
+			} else {
+				throw new UnauthorizedAccessException("Unauthorized");
 			}
 		}
 		
